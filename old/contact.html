@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<br><br><br>
+
+<head>
+  <title>Our Travels - Contact Us</title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <!-- DONT ADD CSS IN CSS BOOTSTRAP  first set of styling applied ^ as at top. ordder is important-->
+  <link href="css/styleC.css" rel="stylesheet">
+  <link href="js/bootstrap.js" rel="stylesheet">
+
+  <link href="myjavascript.js">
+  <!-- viewport makes it more mobile friendly -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">Our Travels</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Continents
+  </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="morroco.html">Africa</a>
+            <a class="dropdown-item" href="dubai.html">Asia</a>
+            <!-- <div class="dropdown-divider"></div> -->
+            <a class="dropdown-item" href="london.html">Europe</a>
+            <a class="dropdown-item" href="nyc.html">North America</a>
+            <a class="dropdown-item" href="#">South America</a>
+            <a class="dropdown-item" href="#">Oceania</a>
+            <a class="dropdown-item" href="#">Antarctica</a>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Continents</Continentsa>
+            </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="about_us.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact Us</a>
+        </li>
+
+
+    </div>
+    </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+      <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+    </form>
+    </div>
+  </nav>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="text-center">
+        <br>
+        <p>We'd love to hear from you!</p>
+        <br>
+        <p>Fill out the form and we'll get back to you as soon as possible!</p>
+        <img class="img-fluid" class="center" src='images2/pic (155).jpg' style="width:90%;">
+
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <form class="" action="functionality.php" method="post">
+
+        <div>
+          <br>
+          <label padding-left:50px>Firstname:</label>
+          <input type="text" name="first-name" value="">
+        </div>
+
+        <br>
+        <div>
+          <label>Lastname:</label>
+          <input type="text" name="last-name" value="">
+        </div>
+
+        <br>
+        <div>
+          <label>Email:</label>
+          <input type="email" name="email" value="">
+        </div>
+
+
+        <br>
+        <div>
+          <label>Phone Number:</label>
+          <input type="text" name="number" value="">
+        </div>
+
+        <br>
+        <div>
+          <label>Message:</label>
+          <textarea rows="2" cols="50">
+
+  </textarea>
+
+        </div>
+
+        <br>
+
+        <!-- <p><button type="button" onclick="alert('Form Submitted!')" >Submit</button></p> -->
+
+        <input type="reset" onclick="alert('Form Submitted!')" value="Submit" />
+
+    </div>
+    </form>
+
+
+
+
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+</html>
