@@ -1,11 +1,7 @@
-{
-  margin: 0;
-  padding: 0;
-}
 
 body {
-  background: #f8f9fa;
-  background-color: #f8f9fa;
+  background: #e5ecc1;
+  background-color: #FAF0c6;
 }
 
 h1 {
@@ -22,11 +18,57 @@ h1 {
   background: #f8f9fa;
 }
 
-body{
-  background:#f8f9fa;
-  background-color:#f8f9fa;
-
+h1{
+	font-family: Verdana;
 }
+
+/* body.fade-out { */
+    /* opacity: 0; */
+    /* transition: none; */
+/* } */
+/* body { */
+    /* opacity: 1; */
+    /* transition: 1s opacity; */
+/* } */
+
+/* #box { */
+    /* font-family: 'Playfair Display'; */
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translateX(-50%) translateY(-50%); */
+/* } */
+/* #restOfPage{ */
+    /* display: none; */
+/* } */
+/* } */
+/* #fade { */
+    /* height:100vh; */
+    /* background-color: black; */
+/* } */
+.btn{
+  background: #E5ECC1;
+  border-color: #E5ECC1;
+  color: #555555;
+}
+
+.btn:hover{
+  background: #CBa17C;
+  border-color: #CBa17C ;
+  color: #555555;
+}
+
+
+.btn:active{
+  background: #522A27;
+  border-color: #522A27;
+  color: #555555;
+}
+
+.jumbotron{
+	background: #f8f9fa;
+}
+
 h1{
 	font-family: Verdana;
 }
@@ -56,56 +98,9 @@ h1{
     /* background-color: black; */
 /* } */
 
-.btn{
-  background: #f8f9fa;
-  border-color: #f8f9fa;
-  color: #7c7d7d;
-}
 
-.jumbotron{
-	background: #f8f9fa;
-}
-
-body{
-  background:#f8f9fa;
-  background-color:#f8f9fa;
-
-}
-h1{
-	font-family: Verdana;
-}
-
-/* body.fade-out { */
-    /* opacity: 0; */
-    /* transition: none; */
-/* } */
-/* body { */
-    /* opacity: 1; */
-    /* transition: 1s opacity; */
-/* } */
-
-/* #box { */
-    /* font-family: 'Playfair Display'; */
-    /* position: absolute; */
-    /* top: 50%; */
-    /* left: 50%; */
-    /* transform: translateX(-50%) translateY(-50%); */
-/* } */
-/* #restOfPage{ */
-    /* display: none; */
-/* } */
-/* } */
-/* #fade { */
-    /* height:100vh; */
-    /* background-color: black; */
-/* } */
-
-.btn{
-  background: #f8f9fa;
-  border-color: #f8f9fa;
-  color: #7c7d7d;
-}
-
-.jumbotron{
-	background: #f8f9fa;
+.navbar-custom{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #522A27;
+  background-color: #E5ECC1;
 }
