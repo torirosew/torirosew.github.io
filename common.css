@@ -9,6 +9,16 @@ button{
     font-size: 100%;
 }
 
+.button-sub{
+    width:30px;
+    height: 30px;
+}
+
+.button-add{
+    width:30px;
+    height: 30px;
+}
+
 .shop-product-img img{
     width: 8rem;
     height: 8rem;
@@ -190,7 +200,7 @@ html{
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
-    height: 21px;
+    height: 30px;
 }
 
 .toggle-button .bar{
