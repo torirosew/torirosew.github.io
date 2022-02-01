@@ -6,7 +6,9 @@ cardElementTemplate.innerHTML = `
 <link href="js/bootstrap.js" rel="stylesheet">
 <div class="col-md-4">
     <div class="card">
-        <img id="pic" class="card-img-top" src="">
+        <div class="shop-product-img">
+            <img id="pic" class="card-img-top" src="">
+        </div>
         <div class="card-body">
             <h4 id="foodName" class="card-title"></h4>
             <p id="foodInfo" class="card-text"></p>
