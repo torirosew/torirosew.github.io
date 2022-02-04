@@ -47,7 +47,7 @@ class FoodCard extends HTMLElement {
         this.shadowRoot.querySelector('#foodName').innerHTML = imagesArr[index][0];
         let foodPrice = imagesArr[index][5];
         if (foodPrice >= 100) {
-            foodInfo = "£" + prettyFloat(foodPrice/100);
+            foodInfo = '&pound' + prettyFloat(foodPrice/100);
         } else {
             foodInfo = "" + foodPrice +"p"
         }
