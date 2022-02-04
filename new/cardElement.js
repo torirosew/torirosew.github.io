@@ -11,9 +11,11 @@ cardElementTemplate.innerHTML = `
         </div>
         <div class="card-body">
             <h4 id="foodName" class="card-title"></h4>
-            <h4 id="basketQuantity" class="card-text text-right"></h4>
             <p id="foodInfo" class="card-text"></p>
+        </div>
+        <div class="card-footer" display="inline-block">
             <button class="addToBasket">Add to basket</button>
+            <h4 id="basketQuantity" class="card-text text-right">0</h4>
         </div>
     </div>
 </div>
