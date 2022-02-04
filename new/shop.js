@@ -37,3 +37,28 @@ meatfishfilter.addEventListener("click", e => {
         }
     }
 });
+
+condimentsfilter.addEventListener("click", e => {
+    cardContainer.innerHTML = "";
+    for (let i=0; i<(imagesArr.length); i++) {
+        if (imagesArr[i][1] == "con") {
+            cardContainer.appendChild(new FoodCard(i));
+        }
+    }
+});
+
+snacksfilter.addEventListener("click", e => {
+    cardContainer.innerHTML = "";
+    for (let i=0; i<(imagesArr.length); i++) {
+        if (imagesArr[i][1] == "snack") {
+            cardContainer.appendChild(new FoodCard(i));
+        }
+    }
+});
+
+allfilter.addEventListener("click", e => {
+    cardContainer.innerHTML = "";
+    for (let i=0; i<(imagesArr.length); i++) {
+        cardContainer.appendChild(new FoodCard(i));
+    }
+});
