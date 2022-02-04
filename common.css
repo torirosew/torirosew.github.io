@@ -264,8 +264,8 @@ html{
 
 #cookieMessage{
     position: fixed;
-    right: 0px;
-    bottom: 0px;
+    right: 100px;
+    bottom: 100px;
     background-color: hsl(var(--colour-4-h), var(--colour-4-s), var(--colour-4-l));
     padding: 20px;
     /* display: none; */

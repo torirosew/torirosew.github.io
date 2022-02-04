@@ -1,6 +1,6 @@
 let productDetails = {};
 let searchStr = "";
-let basket = {};
+let basket = JSON.parse(getCookie("basket"));;
 //Each product is based on a 'card'; a box that contains information about that product.
 //You can change the card template here. The [EVEGPRODUCT#] will always be subsituted for 
 //the element in the imagesArr (see fruit.js)
@@ -55,6 +55,7 @@ var cardTemplate = `<div class="shop-product card" data-num="[EVEGPRODUCT#]">
     document.getElementById('acceptCookies').addEventListener('click', ()=>{
       setCookie('cookieMessageSeen', true);
       document.getElementById('cookieMessage').style.display = 'none';
+      // document.cookie.basket = {};
     });
 
     if(getCookie("cookieMessageSeen") == "true"){
