@@ -7,7 +7,7 @@ cardElementTemplate.innerHTML = `
 <div class="col-md">
     <div class="card mt-4">
         <div class="shop-product-img">
-            <img id="pic" class="card-img-top" src="" onerror="this.onerror=null; this.src='images/not_found.png'">
+            <img id="pic" class="card-img-top" src="" onerror="this.onerror=null; this.src='images/error/not_found.png'">
         </div>
         <div class="card-body">
             <h4 id="foodName" class="card-title"></h4>
