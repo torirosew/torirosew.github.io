@@ -173,8 +173,8 @@ a {
 }
 
 a:hover {
-  color: #0056b3;
-  text-decoration: underline;
+  color:rgba(248, 249, 250, 0.5);
+
 }
 
 a:not([href]):not([tabindex]) {
@@ -3889,6 +3889,7 @@ input[type="button"].btn-block {
 
 .nav-link:hover, .nav-link:focus {
   text-decoration: none;
+  color:#ffeeba;
 }
 
 .nav-link.disabled {
@@ -4694,7 +4695,7 @@ input[type="button"].btn-block {
 
 .page-link:hover {
   z-index: 2;
-  color: #0056b3;
+  color:rgba(255, 255, 255, 0.5);
   text-decoration: none;
   background-color: #e9ecef;
   border-color: #dee2e6;
