@@ -13,8 +13,8 @@ function init(){
 //When changing the page, you should make sure that each adjust button has exactly one click event
 //(otherwise it might trigger multiple times)
 function resetListeners(){
-document.getElementById("paycreditcard").removeEventListener("click",showCreditCardPage);
-document.getElementById("paycreditcard").addEventListener('click',showCreditCardPage);
+document.getElementById("paycreditcard").removeEventListener("click",showCreditCardPage());
+document.getElementById("paycreditcard").addEventListener("click",showCreditCardPage());
 }
 
 //When the pay by credit card link is clicked, show the creditcard.html in an iframe
