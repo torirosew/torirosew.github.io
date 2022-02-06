@@ -96,56 +96,62 @@ function init(){
         // alert(eIn)
     }
 
+    //refresh cards with the cookie quantity value.
+
 }
 
 //Add 1 to the quantity
-  function increment(element){
+function increment(element){
     var thisID = element.closest("#shop_product").getAttribute("data-num");
     if(basket[thisID] === undefined){
-      basket[thisID] = 0;
+        basket[thisID] = 0;
     }
-    changeQuantity(thisID,parseInt(basket[thisID])+1);
-    var div=element.closest("#shop_prodct");
-  }
+    changeQuantity(element,thisID,parseInt(basket[thisID])+1);
+}
 
-  //Subtract 1 from the quantity
-  function decrement(element){
+//Subtract 1 from the quantity
+function decrement(element){
     var thisID = element.closest("#shop_product").getAttribute("data-num");
     if(basket[thisID] === undefined){
-      changeQuantity(thisID,0);
+        changeQuantity(element,thisID,0);
     }else{
-      if(basket[thisID] > 0){
-        changeQuantity(thisID,parseInt(basket[thisID])-1);
-      }
+        if(basket[thisID] > 0){
+            changeQuantity(element,thisID,parseInt(basket[thisID])-1);
+        }
     }
-  }
+}
 
-  /*
-  * Change the quantity of the product with productID
-  */
-  function changeQuantity(productID, newQuantity){
+/*
+* Change the quantity of the product with productID
+*/
+function changeQuantity(element,productID, newQuantity){
     basket[productID] = newQuantity;
     if(newQuantity == 0)
-      delete basket[productID];
+        delete basket[productID];
+
+    refreshCard(element.parentElement,newQuantity);
     refreshBasket();
 }
 
-  //Recalculate basket
-  function refreshBasket(){
+function refreshCard(card,newQuantity){
+    card.querySelector("#basketQuantity").innerHTML=newQuantity;
+}
+
+//Recalculate basket
+function refreshBasket(){
     let total = 0;
     for(const productID in basket){
-      let quantity = basket[productID];
-      let price = productDetails[productID].price;
-      total = total + (price * quantity);
+    let quantity = basket[productID];
+    let price = productDetails[productID].price;
+    total = total + (price * quantity);
     }
     setCookie('basket', JSON.stringify(basket));
     try{
-      document.querySelector("#basketNumTotal").innerHTML = (total / 100).toFixed(2);
+    document.querySelector("#basketNumTotal").innerHTML = (total / 100).toFixed(2);
     }catch(e){
-      
+    
     }
-    alert(total)
     return total;
-  }
+}
 
 init()
