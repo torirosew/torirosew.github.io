@@ -6,6 +6,7 @@ cardElementTemplate.innerHTML = `
 <link href="js/bootstrap.js" rel="stylesheet">
 <div class="col-md">
     <div class="card mt-4">
+        <div id="shop_product" data-num=0>
         <div class="shop-product-img">
             <img id="pic" class="card-img-top" src="" onerror="this.onerror=null; this.src='images/error/not_found.png'">
         </div>
@@ -14,8 +15,8 @@ cardElementTemplate.innerHTML = `
             <p id="foodInfo" class="card-text"></p>
         </div>
         <div class="card-footer" display="inline-block">
-            <button class="btn adjustUp">Add to basket</button>
-            <button class="btn adjustDown">Remove</button>
+            <button class="btn adjustUp" onclick="increment(this)">Add to basket</button>
+            <button class="btn adjustDown" onclick="decrement(this)">Remove</button>
             <h4 id="basketQuantity" class="card-text text-right">0</h4>
         </div>
     </div>
@@ -57,7 +58,7 @@ class FoodCard extends HTMLElement {
         // Need to query basket instead? Or have the basket be a function of reading food obj quanities?
         //this.shadowRoot.querySelector('#basketQuantity').innerHTML = basketQuantity;
         this.shadowRoot.querySelector('#pic').setAttribute('src','images/'+imagesArr[index][2]);
-
+        this.shadowRoot.querySelector('#shop_product').setAttribute('data-num',index);
     }
 
 }

@@ -63,11 +63,24 @@ allfilter.addEventListener("click", e => {
     }
 });
 
+function initProducts(callback){
+    productDetails = [];
+    for(var i = 0; i < imagesArr.length; i++){
+      var thisProduct = {name: imagesArr[i][0], type: imagesArr[i][1], image: imagesArr[i][2], 
+        packsize: imagesArr[i][3], units: imagesArr[i][4], price: imagesArr[i][5], productID: i};
+      productDetails.push(thisProduct);
+    }
+    if(callback !== undefined)
+      callback();
+}
 
 
 /* Basket quantity stuff */
 
 function init(){
+    initProducts()
+
+
     //Fill shop with all products
     let cardContainer = document.querySelector('#cardContainer');
     for (let i=0; i<(imagesArr.length); i++) {
@@ -75,29 +88,29 @@ function init(){
     }
 
 
-    var elements = document.getElementsByClassName("adjustUp");
+    var elements = cardContainer.shadowRoot.getElementsByClassName("adjustUp");
     var eIn;
     alert(elements.length)
     for(eIn=0;eIn<elements.length; eIn++){
         elements[eIn].addEventListener("click",increment);
-        alert(eIn)
+        // alert(eIn)
     }
 
 }
 
 //Add 1 to the quantity
-  function increment(ev){
-    alert("INCREMENT");
-    // var thisID = ev.target.parentElement.closest(".card__content").getAttribute("data-num");
-    // if(basket[thisID] === undefined){
-    //   basket[thisID] = 0;
-    // }
-    // changeQuantity(thisID,parseInt(basket[thisID])+1);
+  function increment(element){
+    var thisID = element.closest("#shop_product").getAttribute("data-num");
+    if(basket[thisID] === undefined){
+      basket[thisID] = 0;
+    }
+    changeQuantity(thisID,parseInt(basket[thisID])+1);
+    var div=element.closest("#shop_prodct");
   }
 
   //Subtract 1 from the quantity
-  function decrement(ev){
-    var thisID = ev.target.parentElement.closest(".card__content").getAttribute("data-num");
+  function decrement(element){
+    var thisID = element.closest("#shop_product").getAttribute("data-num");
     if(basket[thisID] === undefined){
       changeQuantity(thisID,0);
     }else{
@@ -107,5 +120,32 @@ function init(){
     }
   }
 
+  /*
+  * Change the quantity of the product with productID
+  */
+  function changeQuantity(productID, newQuantity){
+    basket[productID] = newQuantity;
+    if(newQuantity == 0)
+      delete basket[productID];
+    refreshBasket();
+}
+
+  //Recalculate basket
+  function refreshBasket(){
+    let total = 0;
+    for(const productID in basket){
+      let quantity = basket[productID];
+      let price = productDetails[productID].price;
+      total = total + (price * quantity);
+    }
+    setCookie('basket', JSON.stringify(basket));
+    try{
+      document.querySelector("#basketNumTotal").innerHTML = (total / 100).toFixed(2);
+    }catch(e){
+      
+    }
+    alert(total)
+    return total;
+  }
 
 init()
