@@ -19,12 +19,15 @@ document.getElementById("paycreditcard").addEventListener('click',showCreditCard
 
 //When the pay by credit card link is clicked, show the creditcard.html in an iframe
 function showCreditCardPage(){
-  if(!creditCardShown){
-    var payIFrame = document.createElement("iframe");
-    payIFrame.src = "creditcard.html";
-    payIFrame.width = "50%";
-  
-    document.querySelector('#customerDetails').appendChild(payIFrame);
+  let text = "Are you sure you want to checkout?"
+  if(confirm(text)==true){  
+    if(!creditCardShown){
+      var payIFrame = document.createElement("iframe");
+      payIFrame.src = "creditcard.html";
+      payIFrame.width = "50%";
+    
+      document.querySelector('#customerDetails').appendChild(payIFrame);
+    }
   }
 }
 
