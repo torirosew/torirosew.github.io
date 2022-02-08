@@ -1,84 +1,64 @@
-<!-- need a checkout javascript -->
-
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>E Veg Store</title>
-  <link href='css/bootstrap.css' rel='stylesheet'>
-  <link href='css/style.css' rel='stylesheet'>
-  <link href="js/bootstrap.js" rel="stylesheet">
-  <link href="myjavascript.js">
-  <meta name="viewport" content="width=device=width, initial-scale=1.0">
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-</head>
-
-
-<body>
-    <div id="nav-placeholder">
-
-    </div>
-    
-    <script>
-    $(function(){
-      $("#nav-placeholder").load("nav.html");
-    });
-    </script>
-    <!--end of Navigation bar-->
-    <!-- <nav class="navbar navbar-expand-lg fixed-top navbar-custom">
-        <a class="navbar-brand" href="home.html">E Veg</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Groceries
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="fruit.html">Fruit</a>
-                <a class="dropdown-item" href="veg.html">Vegetables</a>
-                <a class="dropdown-item" href="meatfish.html">Meat and Fish</a>
-                <a class="dropdown-item" href="condiments.html">Condiments</a>
-                <a class="dropdown-item" href="snacks.html">Sweets and Snacks</a>
-              </div>
-            </div>
-            <li class="nav-item">
-                <a class="nav-link" href="about_us.html">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-                <div class="form-outline">
-                    <input type="search" id="form1" class="form-control" placeholder="Try searching for food" aria-label="Search" />
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="shopmobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 601px)" href="shop.css">
+        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="colours.css">
+        <script src="products.js"></script>
+        <script src="checkout.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <title>E-Veg Shop</title>
+      </head>
+    <body>
+        <body>
+            <div class="hero"><div class="title">E-Veg</div>
+            <div class="navbar">
+              <div class="toggle-wrapper">
+              <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </a>
                 </div>
-            </li>
+        
             </div>
-        </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-        </form>
-    </div>
-    </nav> -->
-    <div class="jumbotron text-center">
-      <h1>Basket</h1>
-      <br>
-      <p> If you have any queries or feedback, please feel free to contact us at:</p>
-      <p>01004847662</p>
-      <p>contact.us@Eveg.net</p>
-      <br>
-      <hr>
-      <br>
-      <p> 123 The Road, 56 North Street, Birmingham. </p>
-      <br>
-      <p>Mon - Sat: 8am - 6pm</p>
-      <p> Sun: 10am - 4pm</p>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-</body>
+            </div>
+            <h2>Basket Contents</h2>
+            <table class="checkoutList">
+                
+            </table>
+            <div id="customerDetails">
+              <h2>Customer Details</h2>
 
+              <form class="customerDetails">
+                <label for="customerName">Name:</label><input type="text" name="customerName" value="Test User" disabled="true">
+                <label for="emailAddress">Email:</label><input type="text" name="emailAddress" value="testuser@example.org" disabled="true">
+                <label for="contactNumber">Contact number:</label><input type="text" name="contactNumber" value="1234" disabled="true">
+                <label for="delAddress">Delivery Address:</label><input type="text" name="delAddress" value="12 Example Avenue, Example Town, EX4 7AL" disabled="true">
+                <button onClick="displayIframe()">Pay by Credit Card</button>
+                <!-- <iframe id="myframe" scr="creditcard.html" width= "100%"></iframe> -->
+                <script>
+                  function displayIframe() {
+                    let text = "are you sure you want to checkout?";
+                    if(confirm(text)==true){
+                      window.open("creditcard.html");
+                    }                    
+                  }
+
+                </script> 
+    
+                
+              </form>
+
+            </div>
+        
+            <div class="about">
+              <div>&copy; 2021 InterVeg Coventry Ltd.</div>
+              <div>Fresh produce from the Midland's green countryside.</div>
+            </div>
+            </div>
+    </body>
 </html>

@@ -80,23 +80,34 @@ function initProducts(callback){
 function init(){
     initProducts()
 
+    if(getCookie("basket")===""){
+        alert("new")
+        basket={};
+    }
+    else{
+        basket=JSON.parse(getCookie("basket"));
+    }
 
     //Fill shop with all products
     let cardContainer = document.querySelector('#cardContainer');
     for (let i=0; i<(imagesArr.length); i++) {
-        cardContainer.appendChild(new FoodCard(i));
+        var card = new FoodCard(i)
+        cardContainer.appendChild(card);
+        //refresh cards with the cookie quantity value.
+        if(typeof basket[i] !== 'undefined'){
+            refreshCard(card,parseInt(basket[i]))
+        }
+        
     }
 
 
-    var elements = cardContainer.shadowRoot.getElementsByClassName("adjustUp");
-    var eIn;
-    alert(elements.length)
-    for(eIn=0;eIn<elements.length; eIn++){
-        elements[eIn].addEventListener("click",increment);
+    // var elements = cardContainer.shadowRoot.getElementsByClassName("adjustUp");
+    // var eIn;
+    // alert(elements.length)
+    // for(eIn=0;eIn<elements.length; eIn++){
+    //     elements[eIn].addEventListener("click",increment);
         // alert(eIn)
-    }
 
-    //refresh cards with the cookie quantity value.
 
 }
 
@@ -147,7 +158,7 @@ function refreshBasket(){
     }
     setCookie('basket', JSON.stringify(basket));
     try{
-    document.querySelector("#basketNumTotal").innerHTML = (total / 100).toFixed(2);
+        document.querySelector("#basketNumTotal").innerHTML = (total / 100).toFixed(2);
     }catch(e){
     
     }
