@@ -14,7 +14,7 @@ cardElementTemplate.innerHTML = `
             <h4 id="foodName" class="card-title"></h4>
             <p id="foodInfo" class="card-text"></p>
         </div>
-        <div class="card-footer" display="inline-block">
+        <div id="footer" class="card-footer" display="inline-block">
             <button class="btn adjustUp" onclick="increment(this)">Add to basket</button>
             <button class="btn adjustDown" onclick="decrement(this)">Remove</button>
             <h4 id="basketQuantity" class="card-text text-right">0</h4>

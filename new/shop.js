@@ -81,7 +81,6 @@ function init(){
     initProducts()
 
     if(getCookie("basket")===""){
-        alert("new")
         basket={};
     }
     else{
@@ -95,7 +94,8 @@ function init(){
         cardContainer.appendChild(card);
         //refresh cards with the cookie quantity value.
         if(typeof basket[i] !== 'undefined'){
-            refreshCard(card,parseInt(basket[i]))
+            // console.log(card.getElementsByClassName("card-footer"));
+            // refreshCard(card.querySelector('#footer'),parseInt(basket[i]))
         }
         
     }
@@ -144,8 +144,10 @@ function changeQuantity(element,productID, newQuantity){
     refreshBasket();
 }
 
-function refreshCard(card,newQuantity){
-    card.querySelector("#basketQuantity").innerHTML=newQuantity;
+
+/* Updates card quantity value */
+function refreshCard(card_footer,newQuantity){
+    card_footer.querySelector("#basketQuantity").innerHTML=newQuantity;
 }
 
 //Recalculate basket
