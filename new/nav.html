@@ -42,11 +42,29 @@ nav{
             </li>
             <li class="nav-item">
                 <div class="form-outline">
-                    <input type="search" id="form1" class="form-control" placeholder="Try searching for food" aria-label="Search" />
+                    <input type="search" id="searchFilter" class="form-control" placeholder="Try searching for food" aria-label="Search" />
                 </div>
+            </li>
+            <li>
+                    <button class="btn" id="searchBtn" onclick="searchUpdate()">Go!</button>
             </li>
 
         </ul>
+        <script>
+            var input = document.getElementById("searchFilter");
+            console.log(input);
+
+            // Execute a function when the user releases a key on the keyboard
+            input.addEventListener("keyup", function(event) {
+            // Number 13 is the "Enter" key on the keyboard
+            if (event.keyCode === 13) {
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Trigger the button element with a click
+                document.getElementById("searchBtn").click();
+            }
+            });
+        </script>
     </div>
     <div class="mx-auto order-0">
     </div>

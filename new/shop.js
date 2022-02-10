@@ -24,66 +24,6 @@ let allfilter = document.querySelector('#all-filter');
 //     }
 // });
 
-// vegetablefilter.addEventListener("click", e => {
-//     cardContainer.innerHTML = "";
-//     for (let i=0; i<(imagesArr.length); i++) {
-//         if (imagesArr[i][1] == "veg") {
-//             if(basket[i]===undefined){
-//                 cardContainer.appendChild(new FoodCard(i,0));
-//             }
-//             else cardContainer.appendChild(new FoodCard(i,basket[i]));
-//         }
-//     }
-// });
-
-// meatfishfilter.addEventListener("click", e => {
-//     cardContainer.innerHTML = "";
-//     for (let i=0; i<(imagesArr.length); i++) {
-//         if (imagesArr[i][1] == "meat") {
-//             if(basket[i]===undefined){
-//                 cardContainer.appendChild(new FoodCard(i,0));
-//             }
-//             else cardContainer.appendChild(new FoodCard(i,basket[i]));
-//         }
-//     }
-// });
-
-// condimentsfilter.addEventListener("click", e => {
-//     cardContainer.innerHTML = "";
-//     for (let i=0; i<(imagesArr.length); i++) {
-//         if (imagesArr[i][1] == "con") {
-//             if(basket[i]===undefined){
-//                 cardContainer.appendChild(new FoodCard(i,0));
-//             }
-//             else cardContainer.appendChild(new FoodCard(i,basket[i]));
-//         }
-//     }
-// });
-
-// snacksfilter.addEventListener("click", e => {
-//     cardContainer.innerHTML = "";
-//     for (let i=0; i<(imagesArr.length); i++) {
-//         if (imagesArr[i][1] == "snack") {
-//             if(basket[i]===undefined){
-//                 cardContainer.appendChild(new FoodCard(i,0));
-//             }
-//             else
-//                 cardContainer.appendChild(new FoodCard(i,basket[i]));
-//         }
-//     }
-// });
-
-// allfilter.addEventListener("click", e => {
-//     cardContainer.innerHTML = "";
-//     for (let i=0; i<(imagesArr.length); i++) {
-//         if(basket[i]===undefined){
-//             cardContainer.appendChild(new FoodCard(i,0));
-//         }
-//         cardContainer.appendChild(new FoodCard(i,basket[i]));
-//     }
-// });
-
-
 fruitfilter.addEventListener("click", e => {
     filterTerm="fruit"
     refreshAllCards()
@@ -140,6 +80,7 @@ function init(){
 
     refreshAllCards()
 
+    
 
 }
 
@@ -163,6 +104,12 @@ function decrement(element){
             changeQuantity(element,thisID,parseInt(basket[thisID])-1);
         }
     }
+}
+
+function searchUpdate(){
+    searchStr=document.getElementById("searchFilter").value;
+    refreshAllCards()
+
 }
 
 /*
