@@ -1,5 +1,6 @@
 let productDetails = {};
 let searchStr = "";
+let filterTerm="";
 let basket = {};
 
 
@@ -11,57 +12,109 @@ let condimentsfilter = document.querySelector('#condiments-filter');
 let snacksfilter = document.querySelector('#snacks-filter');
 let allfilter = document.querySelector('#all-filter');
 
+// fruitfilter.addEventListener("click", e => {
+//     cardContainer.innerHTML = "";
+//     for (let i=0; i<(imagesArr.length); i++) {
+//         if (imagesArr[i][1] == "fruit") {
+//             if(basket[i]===undefined){
+//                 cardContainer.appendChild(new FoodCard(i,0));
+//             }
+//             else cardContainer.appendChild(new FoodCard(i,basket[i]));
+//         }
+//     }
+// });
+
+// vegetablefilter.addEventListener("click", e => {
+//     cardContainer.innerHTML = "";
+//     for (let i=0; i<(imagesArr.length); i++) {
+//         if (imagesArr[i][1] == "veg") {
+//             if(basket[i]===undefined){
+//                 cardContainer.appendChild(new FoodCard(i,0));
+//             }
+//             else cardContainer.appendChild(new FoodCard(i,basket[i]));
+//         }
+//     }
+// });
+
+// meatfishfilter.addEventListener("click", e => {
+//     cardContainer.innerHTML = "";
+//     for (let i=0; i<(imagesArr.length); i++) {
+//         if (imagesArr[i][1] == "meat") {
+//             if(basket[i]===undefined){
+//                 cardContainer.appendChild(new FoodCard(i,0));
+//             }
+//             else cardContainer.appendChild(new FoodCard(i,basket[i]));
+//         }
+//     }
+// });
+
+// condimentsfilter.addEventListener("click", e => {
+//     cardContainer.innerHTML = "";
+//     for (let i=0; i<(imagesArr.length); i++) {
+//         if (imagesArr[i][1] == "con") {
+//             if(basket[i]===undefined){
+//                 cardContainer.appendChild(new FoodCard(i,0));
+//             }
+//             else cardContainer.appendChild(new FoodCard(i,basket[i]));
+//         }
+//     }
+// });
+
+// snacksfilter.addEventListener("click", e => {
+//     cardContainer.innerHTML = "";
+//     for (let i=0; i<(imagesArr.length); i++) {
+//         if (imagesArr[i][1] == "snack") {
+//             if(basket[i]===undefined){
+//                 cardContainer.appendChild(new FoodCard(i,0));
+//             }
+//             else
+//                 cardContainer.appendChild(new FoodCard(i,basket[i]));
+//         }
+//     }
+// });
+
+// allfilter.addEventListener("click", e => {
+//     cardContainer.innerHTML = "";
+//     for (let i=0; i<(imagesArr.length); i++) {
+//         if(basket[i]===undefined){
+//             cardContainer.appendChild(new FoodCard(i,0));
+//         }
+//         cardContainer.appendChild(new FoodCard(i,basket[i]));
+//     }
+// });
+
+
 fruitfilter.addEventListener("click", e => {
-    cardContainer.innerHTML = "";
-    for (let i=0; i<(imagesArr.length); i++) {
-        if (imagesArr[i][1] == "fruit") {
-            cardContainer.appendChild(new FoodCard(i));
-        }
-    }
+    filterTerm="fruit"
+    refreshAllCards()
 });
 
 vegetablefilter.addEventListener("click", e => {
-    cardContainer.innerHTML = "";
-    for (let i=0; i<(imagesArr.length); i++) {
-        if (imagesArr[i][1] == "veg") {
-            cardContainer.appendChild(new FoodCard(i));
-        }
-    }
+    filterTerm="veg"
+    refreshAllCards()
 });
 
 meatfishfilter.addEventListener("click", e => {
-    cardContainer.innerHTML = "";
-    for (let i=0; i<(imagesArr.length); i++) {
-        if (imagesArr[i][1] == "meat") {
-            cardContainer.appendChild(new FoodCard(i));
-        }
-    }
+    filterTerm="meat"
+    refreshAllCards()
 });
 
 condimentsfilter.addEventListener("click", e => {
-    cardContainer.innerHTML = "";
-    for (let i=0; i<(imagesArr.length); i++) {
-        if (imagesArr[i][1] == "con") {
-            cardContainer.appendChild(new FoodCard(i));
-        }
-    }
+    refreshAllCards()
+    filterTerm="con"
 });
 
 snacksfilter.addEventListener("click", e => {
-    cardContainer.innerHTML = "";
-    for (let i=0; i<(imagesArr.length); i++) {
-        if (imagesArr[i][1] == "snack") {
-            cardContainer.appendChild(new FoodCard(i));
-        }
-    }
+    filterTerm="snack"
+    refreshAllCards()
 });
 
 allfilter.addEventListener("click", e => {
-    cardContainer.innerHTML = "";
-    for (let i=0; i<(imagesArr.length); i++) {
-        cardContainer.appendChild(new FoodCard(i));
-    }
+    filterTerm=""
+    refreshAllCards()
 });
+
+
 
 function initProducts(callback){
     productDetails = [];
@@ -74,9 +127,7 @@ function initProducts(callback){
       callback();
 }
 
-
-/* Basket quantity stuff */
-
+/* Init stuff */
 function init(){
     initProducts()
 
@@ -87,26 +138,7 @@ function init(){
         basket=JSON.parse(getCookie("basket"));
     }
 
-    //Fill shop with all products
-    let cardContainer = document.querySelector('#cardContainer');
-    for (let i=0; i<(imagesArr.length); i++) {
-        var card = new FoodCard(i)
-        cardContainer.appendChild(card);
-        //refresh cards with the cookie quantity value.
-        if(typeof basket[i] !== 'undefined'){
-            // console.log(card.getElementsByClassName("card-footer"));
-            // refreshCard(card.querySelector('#footer'),parseInt(basket[i]))
-        }
-        
-    }
-
-
-    // var elements = cardContainer.shadowRoot.getElementsByClassName("adjustUp");
-    // var eIn;
-    // alert(elements.length)
-    // for(eIn=0;eIn<elements.length; eIn++){
-    //     elements[eIn].addEventListener("click",increment);
-        // alert(eIn)
+    refreshAllCards()
 
 
 }
@@ -118,6 +150,7 @@ function increment(element){
         basket[thisID] = 0;
     }
     changeQuantity(element,thisID,parseInt(basket[thisID])+1);
+    refreshAllCards()
 }
 
 //Subtract 1 from the quantity
@@ -149,6 +182,32 @@ function changeQuantity(element,productID, newQuantity){
 function refreshCard(card_footer,newQuantity){
     card_footer.querySelector("#basketQuantity").innerHTML=newQuantity;
 }
+
+
+/* Returns true if should be in list, otherwise false */
+function checkFilter(i){
+    if(searchStr!==""){
+        return imagesArr[i][0].toLowerCase().includes(searchStr.toLowerCase());
+    }
+    if(filterTerm!==""){
+        console.log(filterTerm)
+        return imagesArr[i][1]==filterTerm;
+    }
+    return true;
+}
+
+function refreshAllCards(){
+    cardContainer.innerHTML = "";
+    for (let i=0; i<(imagesArr.length); i++) {
+        if(!checkFilter(i)) continue;
+
+        if(basket[i]===undefined){
+            cardContainer.appendChild(new FoodCard(i,0));
+        }
+        else cardContainer.appendChild(new FoodCard(i,basket[i]));
+    }
+}
+
 
 //Recalculate basket
 function refreshBasket(){

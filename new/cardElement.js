@@ -37,7 +37,7 @@ function prettyFloat(x,nbDec) {
 
 class FoodCard extends HTMLElement {
 
-    constructor(index) {
+    constructor(index, basketQuantity) {
 
         //Basic custom element set up
         super();
@@ -56,7 +56,7 @@ class FoodCard extends HTMLElement {
         foodInfo += " per " + imagesArr[index][3] + " " + imagesArr[index][4];
         this.shadowRoot.querySelector('#foodInfo').innerHTML = foodInfo;
         // Need to query basket instead? Or have the basket be a function of reading food obj quanities?
-        //this.shadowRoot.querySelector('#basketQuantity').innerHTML = basketQuantity;
+        this.shadowRoot.querySelector('#basketQuantity').innerHTML = basketQuantity;
         this.shadowRoot.querySelector('#pic').setAttribute('src','images/'+imagesArr[index][2]);
         this.shadowRoot.querySelector('#shop_product').setAttribute('data-num',index);
     }
