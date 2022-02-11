@@ -17,8 +17,8 @@ h1 {
 }
 
 .logo-jumbotron {
-  background-color: #539e8a;
-  color:#fac4ba;
+  background-color: #87b952;
+  c
 }
 
 h1{
@@ -57,14 +57,14 @@ h1{
     /* background-color: black; */
 /* } */
 .btn{
-  background: #E5ECC1;
-  border-color: #E5ECC1;
+  background: #b6caa0;
+  border-color: #b6caa0;
   color: #555555;
 }
 
 .btn:hover{
-  background: #CBa17C;
-  border-color: #CBa17C ;
+  background: #839272;
+  border-color: #839272 ;
   color: #555555;
 }
 
@@ -76,8 +76,8 @@ h1{
 }
 
 .jumbotron{
-  background: #e6ebc5;
-
+  background: #87b952;
+  color:#353A3F;
 }
 
 h1{
