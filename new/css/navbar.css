@@ -1,0 +1,123 @@
+.navbar {
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #353A3F;
+    color: lightgray;
+
+}
+
+.page-links li:hover {
+    background-color: #24292E;
+}
+.other-links li:hover {
+    background-color: #24292E;
+}
+
+.page-links ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+}
+
+.page-links li a {
+    text-decoration: none;
+    color: lightgray;
+    padding: 1rem;
+    display: block;
+}
+
+.other-links ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+}
+
+.other-links li a {
+    text-decoration: none;
+    color: lightgray;
+    padding: 1rem;
+    left: 2rem;
+    display: block;   
+}
+
+.brand-title {
+    font-size: 1rem;
+    margin: .5rem;
+}
+
+.menu-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.menu-button .bar {
+    height: 3px;
+    width:100%;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+@media (max-width:560px) {
+    .menu-button {
+        display: flex;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .page-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+    .other-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+    .page-links {
+        width: 100%;
+    }
+    .other-links {
+        width:100%
+    }
+    .page-links li {
+        text-align: center;
+    }
+    .other-links li {
+        text-align: center;
+    }
+    .page-links li a {
+        padding: .5rem 1rem;
+    }
+    .other-links li a {
+        padding: .5rem 1rem;
+    }
+    .page-links {
+        display: none;
+    }
+    .other-links {
+        display: none;
+    }
+    .page-links.active {
+        display: flex;
+    }
+    .other-links.active {
+        display: flex;
+    }
+}

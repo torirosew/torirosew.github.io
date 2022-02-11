@@ -1,61 +1,49 @@
-<style>  
-img{
-    width: 20%;
-    height: auto;
-    margin: 0px;
-}
-nav{
-    margin: 0px;
-}
-/* ul#mainNav{
-    margin: 1px;
-} */
-</style>
-<!-- 
-<nav class="navbar navbar-expand-md fixed-top navbar-custom">
-    <nav class="navbar navbar-bg-light navbar-custom"> 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-        <ul class="navbar-nav mr-auto">
-            <!-- <li> 
-                <img  class="navbar-brand" src="images/avatar.png">
-            </li> -->
-            <li>
-                <a class="navbar-brand" href="index.html">E Veg</a>
-            </li>
-    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button> -->
-    
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="store.html">Store</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="about_us.html">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-                <!-- <div class="form-outline">
-                    <style>
-                        input[type="search"], textarea{
-                            background-color:#bfbfbf;
-                            outline: none;
-                        }
-                    </style>
-                    <input type="search" id="searchFilter" class="form-control" placeholder="Try searching for food" aria-label="Search" />
-                </div> -->
-            </li>
-            <!-- <li>
-                    <button class="btn" id="searchBtn" onclick="searchUpdate()">Go!</button>
-            </li> -->
+<link rel="stylesheet" href="css/navbar.css">
 
+<nav class="navbar">
+
+    <!-- Brand Name Button -->
+    <div class="brand-title">
+        <a class="navbar-brand" href="index.html">E Veg</a>
+    </div>
+
+    <!-- Hamburger Menu -->
+    <a href="#" class="menu-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </a>
+    <script>
+        const menuButton = document.getElementsByClassName('menu-button')[0];
+        const pageLinks = document.getElementsByClassName('page-links')[0];
+        const otherLinks = document.getElementsByClassName('other-links')[0];
+        menuButton.addEventListener('click', e => {
+            pageLinks.classList.toggle('active');
+            otherLinks.classList.toggle('active');
+        });
+    </script>
+
+    <!-- First set of page links -->
+    <div class="page-links">
+        <ul>
+            <li> <a href="index.html">Home</a> </li>
+            <li> <a href="store.html">Store</a> </li>
+            <li> <a href="about_us.html">About</a> </li>
+            <li> <a href="contact.html">Contact</a> </li>
         </ul>
+    </div>
+
+    <!-- Second Set of page links -->
+    <div class="other-links">
+        <ul>
+            <li> <a href="basket.html">Basket</a> </li>
+            <li> <a href="account.html">Account</a> </li>
+        </ul>
+    </div>
+
+    <!-- Left over code that looked important -->
+    <div >
+
         <script>
             var input = document.getElementById("searchFilter");
             console.log(input);
@@ -71,17 +59,7 @@ nav{
             }
             });
         </script>
+
     </div>
-    <div class="mx-auto order-0">
-    </div>
-    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="basket.html">Basket</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="account.html">Account</a>
-            </li>
-        </ul>
-    </div>
+
 </nav>

@@ -37,42 +37,28 @@
     <div class="row jumbotron">
       <div class="container-fluid padding">
       <div class="row products text-left">
+
         <div class="col">
+
           <h1 class="display-4 text-center">Available Products</h1>
           <hr>
+
           <h3 class="text-center">Filter by category</h3>
-          <ul class="text-center" >
-            <li style="display:inline">
-              <button id="all-filter" class="btn btn-primary">All</button>
-            </li>
-            <li style="display:inline">
-              <button id="fruit-filter" class="btn btn-primary">Fruit</button>
-            </li>
-            <li style="display:inline">
-              <button id="vegetable-filter" class="btn btn-primary">Vegetables</button>
-            </li>
-            <li style="display:inline">
-              <button id="meatfish-filter" class="btn btn-primary">Meat and Fish</button>
-          </li>
-            <li style="display:inline">
-              <button id="condiments-filter" class="btn btn-primary">Condiments</button>
-            </li>
-            <li style="display:inline">
-              <button id="snacks-filter" class="btn btn-primary">Snacks</button>
-            </li>
-          </ul>
+          <div class="filter-div">
+            <ul class="filter-list">
+              <li> <button id="all-filter" class="btn btn-primary">All</button> </li>
+              <li> <button id="fruit-filter" class="btn btn-primary">Fruit</button> </li>
+              <li> <button id="vegetable-filter" class="btn btn-primary">Vegetables</button> </li>
+              <li> <button id="meatfish-filter" class="btn btn-primary">Meat and Fish</button> </li>
+              <li> <button id="condiments-filter" class="btn btn-primary">Condiments</button> </li>
+              <li> <button id="snacks-filter" class="btn btn-primary">Snacks</button> </li>
+            </ul>
+          </div>
+
         </div>
       </div>
-      <div class="form-outline">
-        <style>
-          .flex{
-            display: flex;
-            flex-direction: row;
-            width: auto;
-            margin-left: 43%;
-          }
-        </style>
-        <div class="flex">
+
+        <div class="form-outline">
           <style>
               input[type="search"], textarea{
                   background-color:#bfbfbf;
@@ -89,7 +75,6 @@
           </style>
           <button class="btn" id="searchBtn" onclick="searchUpdate()" a>Go!</button>
         </div>
-      </div>
 
       </div>
     </div>
@@ -100,6 +85,8 @@
     <div id="cardContainer" class="row padding">
     </div>
     </div>
+
+    
 </body>
 
 <script src="products.js"></script>
