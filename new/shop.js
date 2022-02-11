@@ -158,6 +158,9 @@ function refreshAllCards(){
         }
         else cardContainer.appendChild(new FoodCard(i,basket[i]));
     }
+    if(cardContainer.innerHTML===""){
+        cardContainer.innerHTML="<div class=\"h1 text-center \">Your search came back empty!</div>"
+    }
 }
 
 
