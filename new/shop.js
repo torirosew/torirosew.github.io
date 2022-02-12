@@ -69,28 +69,29 @@ function initProducts(callback){
 
 /* Init stuff */
 function init(){
-    initProducts()
-    if(getCookie('cookieMessageSeen')!=="true"){
-        if (confirm("This site uses cookies")== true ){
-            userPreference = "Cookies accepted";
 
-            setCookie('cookieMessageSeen', true);
-        } else {
-        window.location.replace("./index.html");
-        }
+    initProducts();
 
-        if(getCookie("basket")===""){
-            basket={};
-        }
-        else{
-            basket=JSON.parse(getCookie("basket"));
-        }
+    //Cookies notice
+    const closeBtn = document.querySelector('.close-button');
+    const overlay = document.querySelector('#overlay');
+    closeBtn.addEventListener('click', () => {
+        const modal = document.querySelector('.modal');
+        modal.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+
+
+
+    if(getCookie("basket")===""){
+        basket={};
+    }
+    else{
+        basket=JSON.parse(getCookie("basket"));
     }
     
 
     refreshAllCards()
-
-    
 
 }
 

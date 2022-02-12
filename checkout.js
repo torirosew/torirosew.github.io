@@ -19,18 +19,13 @@ document.getElementById("paycreditcard").addEventListener('click',showCreditCard
 
 //When the pay by credit card link is clicked, show the creditcard.html in an iframe
 function showCreditCardPage(){
-  let text = "are you sure you want to checkout?";
-  if(confirm(text)==true){
-    if(!creditCardShown){
-      var payIFrame = document.createElement("iframe");
-      payIFrame.src = "creditcard.html";
-      payIFrame.width = "50%";
-          
-      document.querySelector('#customerDetails').appendChild(payIFrame);
-      // document.querySelector.appendChild(payIFrame);
-    }
-  }
+  if(!creditCardShown){
+    var payIFrame = document.createElement("iframe");
+    payIFrame.src = "creditcard.html";
+    payIFrame.width = "50%";
   
+    document.querySelector('#customerDetails').appendChild(payIFrame);
+  }
 }
 
 
@@ -40,18 +35,18 @@ function showCreditCardPage(){
 function calculateBasket(){
   let total = 0;
   let basket = JSON.parse(getCookie("basket"));
-  document.querySelector('.checkoutList').innerHTML = '';
+  document.querySelector('.checkoutList').innerHTML = `<td><strong> Product Name </strong></td> <td><strong> Quantity </strong></td> <td><strong> Price </strong></td> <td><strong> Subtotal</strong> </td>`;
   for(const productID in basket){
     let quantity = basket[productID];
     let price = productDetails[productID].price;
     let productTotal = price * quantity;
     total = total + productTotal;
-    let rowHTML = `<td>${productDetails[productID].name}</td><td>${quantity}</td><td>${(price / 100).toFixed(2)}</td><td>£${(productTotal / 100).toFixed(2)}</td>`;
+    let rowHTML = `<td class="row1">${productDetails[productID].name}</td><td>${quantity}</td><td>£${(price / 100).toFixed(2)}</td><td>£${(productTotal / 100).toFixed(2)}</td>`;
     var thisProduct = document.createElement("tr");
     thisProduct.innerHTML = rowHTML;
     document.querySelector('.checkoutList').appendChild(thisProduct);
   }
-  let rowHTML = `<td colspan="3">Total:</td><td>£${(total / 100).toFixed(2)}</td>`;
+  let rowHTML = `<td></td><td></td><td><strong>Total:</strong></td><td><strong>£${(total / 100).toFixed(2)}</strong></td>`;
   var thisProduct = document.createElement("tr");
   thisProduct.innerHTML = rowHTML;
   document.querySelector('.checkoutList').appendChild(thisProduct);
