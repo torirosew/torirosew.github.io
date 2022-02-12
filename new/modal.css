@@ -1,60 +1,68 @@
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 60px;
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: #fefefe;
-    margin: 5px auto; /* 15% from the top and centered */
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-  }
-  
-  /* The Close Button */
-  .close {
-    /* Position it in the top right corner outside of the modal */
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-  }
-  
-  /* Close button on hover */
-  .close:hover,
-  .close:focus {
-    color: red;
-    cursor: pointer;
-  }
-  
-  /* Add Zoom Animation */
-  .animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-  }
-  
-  @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)}
-    to {-webkit-transform: scale(1)}
-  }
-  
-  @keyframes animatezoom {
-    from {transform: scale(0)}
-    to {transform: scale(1)}
-  }
+  display:block;
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border-radius: 10px;
+  z-index:99;
+  background-color: #353A3F;
+  color:lightgrey;
+  width:500px;
+  max-width:80%;
+  padding: 10px 15px;
+  max-height: 150px;
+}
+.modal.active {
+  transform:translate(-50%, -50%) scale(1);
+}
 
-  img{
-    width: 10%;
-    height: auto;
+.modal-top {
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.close-button {
+  cursor: pointer;
+  border:none;
+  outline:none;
+  background:none;
+  font-size: 1.5rem;
+  font-weight:bold;
+  padding-bottom:1.25rem;
+}
+.close-button:hover,
+.close-button:focus {
+  color: red;
+}
+
+.modal-content {
+  padding: 10px, 15px;
+  background-color: #353A3F;
+  color:lightgrey;
+  border:none;
+}
+
+.privLink {
+  color: #b6caa0;
+  text-decoration:underline;
+}
+
+#overlay {
+  position:fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  pointer-events: none;
+  transition:ease-in-out;
+}
+
+#overlay.active {
+  opacity:1;
+  pointer-events: all;
 }
