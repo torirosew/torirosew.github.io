@@ -75,11 +75,21 @@ function init(){
     //Cookies notice
     const closeBtn = document.querySelector('.close-button');
     const overlay = document.querySelector('#overlay');
-    closeBtn.addEventListener('click', () => {
+    if(getCookie('cookieMessageSeen')==="true"){
         const modal = document.querySelector('.modal');
         modal.classList.remove('active');
         overlay.classList.remove('active');
-    });
+    }
+    else{
+        closeBtn.addEventListener('click', () => {
+            const modal = document.querySelector('.modal');
+            modal.classList.remove('active');
+            overlay.classList.remove('active');
+            setCookie('cookieMessageSeen',true);
+        });
+
+
+    }
 
 
 
