@@ -77,7 +77,7 @@ h1{
 }
 
 .filter-list li {
-  padding: 1rem;
+  padding: .5rem;
   display: block;
   text-align: center;
 }
@@ -97,4 +97,44 @@ h1{
   text-align: center;
   align-items: center;
   justify-content: center;
+}
+
+.checkout-header {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.basket-table {
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.checkoutList {
+  text-align:center;
+}
+.row1 {
+  text-align: left;
+}
+
+.customerDetails {
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.labelRow {
+  text-align:right;
+}
+
+.about {
+  margin:0;
+  padding-top:5rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
 }
