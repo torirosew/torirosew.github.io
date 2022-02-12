@@ -40,8 +40,8 @@ meatfishfilter.addEventListener("click", e => {
 });
 
 condimentsfilter.addEventListener("click", e => {
-    refreshAllCards()
     filterTerm="con"
+    refreshAllCards()
 });
 
 snacksfilter.addEventListener("click", e => {
@@ -70,18 +70,23 @@ function initProducts(callback){
 /* Init stuff */
 function init(){
     initProducts()
-    if (confirm("This site uses cookies")== true ){
-        userPreference = "Cookies accepted";
-    } else {
-       window.location.replace("./index.html");
-    }
+    if(getCookie('cookieMessageSeen')!=="true"){
+        if (confirm("This site uses cookies")== true ){
+            userPreference = "Cookies accepted";
 
-    if(getCookie("basket")===""){
-        basket={};
+            setCookie('cookieMessageSeen', true);
+        } else {
+        window.location.replace("./index.html");
+        }
+
+        if(getCookie("basket")===""){
+            basket={};
+        }
+        else{
+            basket=JSON.parse(getCookie("basket"));
+        }
     }
-    else{
-        basket=JSON.parse(getCookie("basket"));
-    }
+    
 
     refreshAllCards()
 
