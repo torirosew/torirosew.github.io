@@ -7,6 +7,7 @@
   <title>E Veg Store</title>
   <link href='css/bootstrap.css' rel='stylesheet'>
   <link href='css/style.css' rel='stylesheet'>
+  <link href='modal.css' rel="stylesheet">
   <link href="js/bootstrap.js" rel="stylesheet">
   <link href="myjavascript.js">
   <meta name="viewport" content="width=device=width, initial-scale=1.0">
@@ -22,16 +23,14 @@
 
 <body>
 
+  <!-- Navigation Bar -->
   <div id="nav-placeholder">
-
   </div>
-  
   <script>
   $(function(){
     $("#nav-placeholder").load("nav.html");
   });
   </script>
-  <!--end of Navigation bar-->
 
     <!-- Header bit -->
     <div class="row jumbotron">
@@ -86,6 +85,20 @@
     </div>
     </div>
 
+    <!-- Cookies Popup -->
+    <div class="modal active">
+      <div class="modal-top">
+        <h2> Cookies </h2>
+        <button class="close-button">&times;</button>
+      </div>
+      <div class="modal-content">
+        <p>
+          This website uses cookies to store the contents of your basket.
+          To find out more, read our <a href="about_us.html" class="privLink">privacy policy</a>
+        </p>
+      </div>
+    </div>
+    <div class="active" id="overlay"></div>
     
 </body>
 
