@@ -102,6 +102,8 @@ function init(){
     
 
     refreshAllCards()
+    refreshNav()
+
 
 }
 
@@ -112,7 +114,7 @@ function increment(element){
         basket[thisID] = 0;
     }
     changeQuantity(element,thisID,parseInt(basket[thisID])+1);
-    refreshAllCards()
+    // refreshAllCards()
 }
 
 //Subtract 1 from the quantity
@@ -133,6 +135,21 @@ function searchUpdate(){
 
 }
 
+function refreshNav(){
+    var NavBasket=document.getElementById("NavBasket")
+    var basketSize=0;
+    for (const [key,value] of Object.entries(basket)){
+        basketSize+=value
+    }
+    if(basketSize>0){
+        NavBasket.innerHTML="Basket("+basketSize+")"
+    }
+    else{
+        NavBasket.innerHTML="Basket"
+    }
+}
+
+
 /*
 * Change the quantity of the product with productID
 */
@@ -143,6 +160,7 @@ function changeQuantity(element,productID, newQuantity){
 
     refreshCard(element.parentElement,newQuantity);
     refreshBasket();
+    refreshNav()
 }
 
 
