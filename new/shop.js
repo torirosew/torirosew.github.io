@@ -4,7 +4,6 @@ let filterTerm="";
 let basket = {};
 
 
-
 let fruitfilter = document.querySelector('#fruit-filter');
 let vegetablefilter = document.querySelector('#vegetable-filter');
 let meatfishfilter = document.querySelector('#meatfish-filter');
@@ -12,43 +11,27 @@ let condimentsfilter = document.querySelector('#condiments-filter');
 let snacksfilter = document.querySelector('#snacks-filter');
 let allfilter = document.querySelector('#all-filter');
 
-// fruitfilter.addEventListener("click", e => {
-//     cardContainer.innerHTML = "";
-//     for (let i=0; i<(imagesArr.length); i++) {
-//         if (imagesArr[i][1] == "fruit") {
-//             if(basket[i]===undefined){
-//                 cardContainer.appendChild(new FoodCard(i,0));
-//             }
-//             else cardContainer.appendChild(new FoodCard(i,basket[i]));
-//         }
-//     }
-// });
 
 fruitfilter.addEventListener("click", e => {
     filterTerm="fruit"
     refreshAllCards()
 });
-
 vegetablefilter.addEventListener("click", e => {
     filterTerm="veg"
     refreshAllCards()
 });
-
 meatfishfilter.addEventListener("click", e => {
     filterTerm="meat"
     refreshAllCards()
 });
-
 condimentsfilter.addEventListener("click", e => {
     filterTerm="con"
     refreshAllCards()
 });
-
 snacksfilter.addEventListener("click", e => {
     filterTerm="snack"
     refreshAllCards()
 });
-
 allfilter.addEventListener("click", e => {
     filterTerm=""
     refreshAllCards()
@@ -107,27 +90,30 @@ function init(){
 
 }
 
+
 //Add 1 to the quantity
 function increment(element){
     var thisID = element.closest("#shop_product").getAttribute("data-num");
+    var quantity = element.parentElement.querySelector('#qToAdd').value;
     if(basket[thisID] === undefined){
         basket[thisID] = 0;
     }
-    changeQuantity(element,thisID,parseInt(basket[thisID])+1);
-    // refreshAllCards()
+    changeQuantity(element,thisID,parseInt(basket[thisID])+parseInt(quantity));
 }
 
 //Subtract 1 from the quantity
 function decrement(element){
     var thisID = element.closest("#shop_product").getAttribute("data-num");
+    var quantity = element.parentElement.querySelector('#qToAdd').value;
     if(basket[thisID] === undefined){
         changeQuantity(element,thisID,0);
-    }else{
+    } else {
         if(basket[thisID] > 0){
-            changeQuantity(element,thisID,parseInt(basket[thisID])-1);
+            changeQuantity(element,thisID,parseInt(basket[thisID])-parseInt(quantity));
         }
     }
 }
+
 
 function searchUpdate(){
     searchStr=document.getElementById("searchFilter").value;
@@ -155,9 +141,10 @@ function refreshNav(){
 */
 function changeQuantity(element,productID, newQuantity){
     basket[productID] = newQuantity;
-    if(newQuantity == 0)
+    if(newQuantity <= 0) {
         delete basket[productID];
-
+        newQuantity = 0;
+    }
     refreshCard(element.parentElement,newQuantity);
     refreshBasket();
     refreshNav()
