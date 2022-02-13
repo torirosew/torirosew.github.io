@@ -36,12 +36,17 @@ function calculateBasket(){
   let total = 0;
   let basket = JSON.parse(getCookie("basket"));
   document.querySelector('.checkoutList').innerHTML = '';
+
+  let rowHTMLtmp=`<td> Product Name&nbsp&nbsp&nbsp</td><td> &nbsp&nbsp&nbspQuantity&nbsp&nbsp&nbsp&nbsp</td><td>  &nbsp&nbsp&nbsp£/Unit&nbsp&nbsp&nbsp&nbsp</td><td>Price</td>`;
+  var thisProduct=document.createElement("tr");
+  thisProduct.innerHTML=rowHTMLtmp;
+  document.querySelector('.checkoutList').appendChild(thisProduct);
   for(const productID in basket){
     let quantity = basket[productID];
     let price = productDetails[productID].price;
     let productTotal = price * quantity;
     total = total + productTotal;
-    let rowHTML = `<td>${productDetails[productID].name}</td><td>${quantity}</td><td>${(price / 100).toFixed(2)}</td><td>£${(productTotal / 100).toFixed(2)}</td>`;
+    let rowHTML = `<td> ${productDetails[productID].name} </td><td> ${quantity} </td><td> £${(price / 100).toFixed(2)} </td><td> £${(productTotal / 100).toFixed(2)} </td>`;
     var thisProduct = document.createElement("tr");
     thisProduct.innerHTML = rowHTML;
     document.querySelector('.checkoutList').appendChild(thisProduct);
