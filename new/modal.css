@@ -49,11 +49,6 @@
   color: #b6caa0;
   text-decoration:underline;
 }
-@keyframes animatezoom {
-  from {transform: scale(0)}
-  to {transform: scale(1)}
-} 
-
 
 #overlay {
   position:fixed;
