@@ -1,9 +1,6 @@
-
 body {
   background: #e6ebc5;
-
   background-color: #e6ebc5;
-
 }
 
 h1 {
@@ -18,7 +15,6 @@ h1 {
 
 .logo-jumbotron {
   background-color: #87b952;
-  color: #353A3F;
 }
 
 h1{
@@ -32,31 +28,6 @@ h1{
   vertical-align: middle;
 }
 
-
-/* body.fade-out { */
-    /* opacity: 0; */
-    /* transition: none; */
-/* } */
-/* body { */
-    /* opacity: 1; */
-    /* transition: 1s opacity; */
-/* } */
-
-/* #box { */
-    /* font-family: 'Playfair Display'; */
-    /* position: absolute; */
-    /* top: 50%; */
-    /* left: 50%; */
-    /* transform: translateX(-50%) translateY(-50%); */
-/* } */
-/* #restOfPage{ */
-    /* display: none; */
-/* } */
-/* } */
-/* #fade { */
-    /* height:100vh; */
-    /* background-color: black; */
-/* } */
 .btn{
   background: #b6caa0;
   border-color: #b6caa0;
@@ -68,7 +39,6 @@ h1{
   border-color: #839272 ;
   color: #555555;
 }
-
 
 .btn:active{
   background: #522A27;
@@ -85,34 +55,95 @@ h1{
 	font-family: Verdana;
 }
 
-/* body.fade-out { */
-    /* opacity: 0; */
-    /* transition: none; */
-/* } */
-/* body { */
-    /* opacity: 1; */
-    /* transition: 1s opacity; */
-/* } */
+.filter-div {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
 
-/* #box { */
-    /* font-family: 'Playfair Display'; */
-    /* position: absolute; */
-    /* top: 50%; */
-    /* left: 50%; */
-    /* transform: translateX(-50%) translateY(-50%); */
-/* } */
-/* #restOfPage{ */
-    /* display: none; */
-/* } */
-/* } */
-/* #fade { */
-    /* height:100vh; */
-    /* background-color: black; */
-/* } */
+.filter-list {
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
+.filter-list li {
+  padding: .5rem;
+  display: block;
+  text-align: center;
+}
 
-.navbar-custom{
-  font-family: Arial, Helvetica, sans-serif;
-  color: #522A27;
-  background-color: #E5ECC1;
+@media (max-width:500px) {
+  .home-page-image {
+    max-width: 300px;
+    width:300px;
+  }
+}
+
+.form-outline {
+  margin:0;
+  padding:0;
+  display: flex;
+  align-items:center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkout-header {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.basket-table {
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.checkoutList {
+  text-align:center;
+}
+.row1 {
+  text-align: left;
+}
+
+.customerDetails {
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.labelRow {
+  text-align:right;
+}
+
+.about {
+  margin:0;
+  padding-top:5rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.qToAdd {
+  max-width: 50px;
+  width: 50px;
+  text-align:center;
+  font-size:1rem;
+  padding:.25rem;
+  margin-top:.5rem;
 }

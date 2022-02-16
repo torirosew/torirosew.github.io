@@ -7,6 +7,7 @@
   <title>E Veg Store</title>
   <link href='css/bootstrap.css' rel='stylesheet'>
   <link href='css/style.css' rel='stylesheet'>
+  <link href='modal.css' rel="stylesheet">
   <link href="js/bootstrap.js" rel="stylesheet">
   <link href="myjavascript.js">
   <meta name="viewport" content="width=device=width, initial-scale=1.0">
@@ -22,57 +23,41 @@
 
 <body>
 
+  <!-- Navigation Bar -->
   <div id="nav-placeholder">
-
   </div>
-  
   <script>
   $(function(){
     $("#nav-placeholder").load("nav.html");
   });
   </script>
-  <!--end of Navigation bar-->
 
     <!-- Header bit -->
     <div class="row jumbotron">
       <div class="container-fluid padding">
       <div class="row products text-left">
+
         <div class="col">
+
           <h1 class="display-4 text-center">Available Products</h1>
           <hr>
+
           <h3 class="text-center">Filter by category</h3>
-          <ul class="text-center" >
-            <li style="display:inline">
-              <button id="all-filter" class="btn btn-primary">All</button>
-            </li>
-            <li style="display:inline">
-              <button id="fruit-filter" class="btn btn-primary">Fruit</button>
-            </li>
-            <li style="display:inline">
-              <button id="vegetable-filter" class="btn btn-primary">Vegetables</button>
-            </li>
-            <li style="display:inline">
-              <button id="meatfish-filter" class="btn btn-primary">Meat and Fish</button>
-          </li>
-            <li style="display:inline">
-              <button id="condiments-filter" class="btn btn-primary">Condiments</button>
-            </li>
-            <li style="display:inline">
-              <button id="snacks-filter" class="btn btn-primary">Snacks</button>
-            </li>
-          </ul>
+          <div class="filter-div">
+            <ul class="filter-list">
+              <li> <button id="all-filter" class="btn btn-primary">All</button> </li>
+              <li> <button id="fruit-filter" class="btn btn-primary">Fruit</button> </li>
+              <li> <button id="vegetable-filter" class="btn btn-primary">Vegetables</button> </li>
+              <li> <button id="meatfish-filter" class="btn btn-primary">Meat and Fish</button> </li>
+              <li> <button id="condiments-filter" class="btn btn-primary">Condiments</button> </li>
+              <li> <button id="snacks-filter" class="btn btn-primary">Snacks</button> </li>
+            </ul>
+          </div>
+
         </div>
       </div>
-      <div class="form-outline">
-        <style>
-          .flex{
-            display: flex;
-            flex-direction: row;
-            width: auto;
-            margin-left: 43%;
-          }
-        </style>
-        <div class="flex">
+
+        <div class="form-outline">
           <style>
               input[type="search"], textarea{
                   background-color:#bfbfbf;
@@ -89,17 +74,31 @@
           </style>
           <button class="btn" id="searchBtn" onclick="searchUpdate()" a>Go!</button>
         </div>
-      </div>
 
       </div>
     </div>
 
     <!-- Cards Stuff -->
-
     <div class="container-fluid padding">
-    <div id="cardContainer" class="row padding">
+      <div id="cardContainer" class="row justify-content-center">
+      </div>
     </div>
+
+    <!-- Cookies Popup -->
+    <div class="modal active">
+      <div class="modal-top">
+        <h2> Cookies </h2>
+        <button class="close-button">&times;</button>
+      </div>
+      <div class="modal-content">
+        <p>
+          This website uses cookies to store the contents of your basket.
+          To find out more, read our <a href="about_us.html" class="privLink">privacy policy</a>
+        </p>
+      </div>
     </div>
+    <div class="active" id="overlay"></div>
+    
 </body>
 
 <script src="products.js"></script>

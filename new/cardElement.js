@@ -14,10 +14,11 @@ cardElementTemplate.innerHTML = `
             <h4 id="foodName" class="card-title"></h4>
             <p id="foodInfo" class="card-text"></p>
         </div>
-        <div id="footer" class="card-footer" display="inline-block">
+        <div id="footer" class="card-footer">
             <button class="btn adjustUp" onclick="increment(this)">Add to basket</button>
             <button class="btn adjustDown" onclick="decrement(this)">Remove</button>
-            <h4 id="basketQuantity" class="card-text text-right">0</h4>
+            <input type="number" class="qToAdd" id="qToAdd" min=1 value=1>
+            <h4 id="basketQuantity" class="card-text text-right basket-num">0</h4>
         </div>
     </div>
 </div>
@@ -59,6 +60,18 @@ class FoodCard extends HTMLElement {
         this.shadowRoot.querySelector('#basketQuantity').innerHTML = basketQuantity;
         this.shadowRoot.querySelector('#pic').setAttribute('src','images/'+imagesArr[index][2]);
         this.shadowRoot.querySelector('#shop_product').setAttribute('data-num',index);
+
+        this.shadowRoot.querySelector('#qToAdd').addEventListener('blur', e => {
+            console.log('blur happened');
+            let toValidate = this.shadowRoot.querySelector('#qToAdd');
+            console.log(toValidate.value);
+            if (!(toValidate.value >= 1)) {
+                toValidate.value = 1;
+            } else if (toValidate.value % 1 != 0) {
+                toValidate.value = Math.round(toValidate.value);
+            }
+        });
+
     }
 
 }
