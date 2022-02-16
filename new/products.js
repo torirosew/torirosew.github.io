@@ -29,7 +29,7 @@ var imagesArr = [
   ["Leeks","veg","Leek1.jpg",500,"g",95],
   ["Lettuce","veg","Lettuce1.jpg",1,"unit",50],
   ["Milk","dairy","Milk1.jpg",1,"pint",180],
-  ["Mixed Chillis","veg","Chilli1.jpg",50,"g",60],
+  ["Mixed Chillies","veg","Chilli1.jpg",50,"g",60],
   ["Mushrooms","veg","Mushroom1.jpg",300,"g",100],
   ["Nectarines","fruit","Nectarine1.jpg",4,"units",200],
   ["Onions","veg","Onion1.jpg",1,"kg",65],
