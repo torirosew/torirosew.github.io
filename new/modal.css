@@ -32,10 +32,11 @@
   font-size: 1.5rem;
   font-weight:bold;
   padding-bottom:1.25rem;
+  color:rgb(114, 211, 111)
 }
 .close-button:hover,
 .close-button:focus {
-  color: red;
+  color: rgb(39, 126, 36);
 }
 
 .modal-content {
