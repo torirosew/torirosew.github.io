@@ -1,0 +1,62 @@
+
+<!--- NOTE: Base page to be copied not used... -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>E Veg Store</title>
+  <link href='css/bootstrap.css' rel='stylesheet'>
+  <link href='css/style.css' rel='stylesheet'>
+  <link href='modal2.css' rel='stylesheet'>
+  <link href="js/bootstrap.js" rel="stylesheet">
+  <!-- <link href="myjavascript.js"> -->
+  <meta name="viewport" content="width=device=width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+  <div id="nav-placeholder">
+  </div>
+  
+  <script>
+  $(function(){
+    $("#nav-placeholder").load("nav.html");
+  });
+  </script>
+  <!--end of Navigation bar-->
+    <div class="jumbotron text-center">
+      <img src="images/logo/logoLongNoBg.png">
+
+      <br>
+      <a class="h1" onclick="document.getElementById('id01').style.display='block'"> Log-in </a>
+<!-- Button to open the modal login form -->
+<!-- <button onclick="document.getElementById('id01').style.display='block'">Login</button> -->
+
+<!-- The Modal -->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'"
+class="close" title="Close Modal" style="background-color: #87b952;">&times; </span>
+  <!-- Modal Content -->
+  <form class="modal-content animate" action="/action_page.php" ></form>">
+    <div class="imgcontainer" style="background-color: #87b952;">
+      <img src="images/logo/logoLongNoBg.png" alt="Avatar" class="avatar">
+    </div>
+    <div class="container" style="background-color: #87b952;">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+    <div class="container" style="background-color: #87b952;">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="css/navbar.css">
+
+<nav class="navbar">
+
+    <!-- Brand Name Button -->
+    <div class="brand-title">
+        <a class="navbar-brand" href="index.html">E Veg</a>
+    </div>
+
+    <!-- Hamburger Menu -->
+    <a href="#" class="menu-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </a>
+    <script>
+        const menuButton = document.getElementsByClassName('menu-button')[0];
+        const pageLinks = document.getElementsByClassName('page-links')[0];
+        const otherLinks = document.getElementsByClassName('other-links')[0];
+        menuButton.addEventListener('click', e => {
+            pageLinks.classList.toggle('active');
+            otherLinks.classList.toggle('active');
+        });
+    </script>
+
+    <!-- First set of page links -->
+    <div class="page-links">
+        <ul>
+            <li class="nav-item"><a class="nav-link" onclick="history.back()">Back</a></li>
+            <li> <a href="index.html">Home</a> </li>
+            <li> <a href="store.html">Store</a> </li>
+            <li> <a href="about_us.html">About</a> </li>
+            <li> <a href="contact.html">Contact</a> </li>
+        </ul>
+    </div>
+
+    <!-- Second Set of page links -->
+    <div class="other-links">
+        <ul>
+            <li> <a id="NavBasket" href="basket.html">Basket</a> </li>
+            <li> <a href="account.html">Account</a> </li>
+        </ul>
+    </div>
+
+    <!-- Left over code that looked important -->
+    <div >
+
+        <script>
+            var input = document.getElementById("searchFilter");
+            console.log(input);
+
+            // Execute a function when the user releases a key on the keyboard
+            input.addEventListener("keyup", function(event) {
+            // Number 13 is the "Enter" key on the keyboard
+            if (event.keyCode === 13) {
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Trigger the button element with a click
+                document.getElementById("searchBtn").click();
+            }
+            });
+        </script>
+
+    </div>
+
+</nav>
